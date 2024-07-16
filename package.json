@@ -1,0 +1,75 @@
+{
+  "name": "vscode-css-g7formatter",
+  "displayName": "CSS G7 Formatter",
+  "description": "Extension para formatear archivos CSS segun las reglas de formato G7",
+  "version": "1.0",
+  "publisher": "GrupoSie7e",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Formatters"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grupo-sie7e/vscode-css-formatter"
+  },
+  "homepage": "https://github.com/grupo-sie7e/vscode-css-formatter",
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.formatG7CSS",
+        "title": "Formatear CSS usando G7"
+      }
+    ],
+    "languages": [
+      {
+        "id": "css",
+        "extensions": [".css"]
+      }
+    ],
+    "configuration": {
+      "title": "CSS G7 Formatter",
+      "properties": {
+        "cssG7Formatter.propertyOrder": {
+          "type": "array",
+          "default": [
+            "width", "height", "max-width", "max-height", "min-width", "min-height",
+            "background-color", "background-image", "background-repeat", "background-position", "background-size",
+            "color", "opacity",
+            "padding", "margin",
+            "font-family", "font-size", "font-weight", "font-style", "font-variant", "line-height", "text-align", "text-transform", "text-decoration",
+            "border", "border-width", "border-style", "border-color", "border-top", "border-right", "border-bottom", "border-left", "border-radius",
+            "box-shadow", "text-shadow",
+            "display", "visibility", "overflow", "position", "top", "right", "bottom", "left", "z-index",
+            "flex-direction", "flex-wrap", "flex-flow", "justify-content", "align-items", "align-content", "order", "flex-grow", "flex-shrink", "flex-basis",
+            "transition", "animation",
+            "cursor", "user-select", "pointer-events", "white-space", "word-wrap", "word-break", "text-overflow", "resize", "outline", "appearance"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "description": "Define el orden de las propiedades CSS"
+        }
+      }
+    }
+  },
+  "activationEvents": [
+    "onLanguage:css"
+  ],
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch",
+    "lint": "eslint . --ext .js,.ts",
+    "test": "jest",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "typescript": "^5.5.3",
+    "vscode": "^1.1.34",
+    "vscode-languageclient": "^8.0.0"
+  },
+  "license": "MIT"
+}

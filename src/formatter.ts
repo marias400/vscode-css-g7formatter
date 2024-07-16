@@ -25,7 +25,6 @@ export function reorderProperties(cssContent: string, propertyOrderInc?: string[
     
     const propertyOrder = propertyOrderInc || defaultPropertyOrder;
 
-    const mediaQueryPattern = /@media[^{]*\{[^{}]*\}/g;
     const blockPattern = /(@media[^{]+\{[^{}]*\}|[^{}]+)\s*\{([^{}]*)\}/g;
 
     function reorderSingleBlock(match: string, selector: string, properties: string): string {

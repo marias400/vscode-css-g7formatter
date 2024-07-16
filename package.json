@@ -12,9 +12,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/grupo-sie7e/vscode-css-formatter"
+    "url": "https://github.com/marias400/vscode-css-g7formatter"
   },
-  "homepage": "https://github.com/grupo-sie7e/vscode-css-formatter",
+  "homepage": "https://github.com/marias400/vscode-css-g7formatter",
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
